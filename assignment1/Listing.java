@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Listing {
     private String title;
     ArrayList<String> items = new ArrayList<String>();
-    SortBehavior sortBehavior = new BubbleSort();
+    SortBehavior sortBehavior;// = new BubbleSort();
 
     Listing(String title) {
         this.title = title;
@@ -27,12 +27,17 @@ public class Listing {
 
     public void setSortBehavior(SortBehavior sortBehavior) 
     {
-        this.sortBehavior = new InsertionSort();
+        if (sortBehavior instanceof InsertionSort)
+        {
+            this.sortBehavior = new InsertionSort();
+        } else if (sortBehavior instanceof BubbleSort)
+        {
+            this.sortBehavior = new BubbleSort();
+        }
     }
 
     public ArrayList<String> getSortedList() 
     {
-        
         return sortBehavior.sort(items);
     }
 
