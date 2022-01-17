@@ -1,48 +1,67 @@
 package assignment1;
 import java.util.ArrayList;
 
+/**
+ * Stores and sorts a list of Strings
+ */
 public class Listing {
     private String title;
     ArrayList<String> items = new ArrayList<String>();
-    SortBehavior sortBehavior;// = new BubbleSort();
+    SortBehavior sortBehavior = new BubbleSort();
 
+    /**
+     * Creates a new Listing
+     */
     Listing(String title) {
         this.title = title;
     }
 
-    public void add(String item) 
-    {
+    /**
+     * Adds an item to items
+     */
+    public void add(String item) {
         items.add(item);
     }
 
-    public void remove(String item)  // TODO: find and remove
-    {
-        //items.remove(0);
+    /**
+     * Removes an item from items
+     */
+    public void remove(String item) {
+        for (int i = 0; i < items.size(); i++) {
+            if(items.get(i).equals(item))
+                items.remove(i);
+        }
     }
 
-    public String getTitle()
-    {
+    /**
+     * Returns title
+     */
+    public String getTitle() {
         return this.title;
     }
 
-    public void setSortBehavior(SortBehavior sortBehavior) 
-    {
-        if (sortBehavior instanceof InsertionSort)
-        {
+    /**
+     * Changes the sortBehavior between BubbleSort and InsertionSort
+     */
+    public void setSortBehavior(SortBehavior sortBehavior) {
+        if (sortBehavior instanceof InsertionSort) {
             this.sortBehavior = new InsertionSort();
-        } else if (sortBehavior instanceof BubbleSort)
-        {
+        } else if (sortBehavior instanceof BubbleSort) {
             this.sortBehavior = new BubbleSort();
         }
     }
 
-    public ArrayList<String> getSortedList() 
-    {
+    /**
+     * Returns a sorted ArrayList
+     */
+    public ArrayList<String> getSortedList() {
         return sortBehavior.sort(items);
     }
 
-    public ArrayList<String> getUnSortedList() 
-    {
+    /**
+     * Returns an unsorted ArrayList
+     */
+    public ArrayList<String> getUnSortedList() {
         return items;
     }
 }
