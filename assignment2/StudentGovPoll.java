@@ -2,7 +2,7 @@ package assignment2;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class StudentGovPoll {
+public class StudentGovPoll implements Subject{
     ArrayList<Observer> observers = new ArrayList<Observer>();
     HashMap<String, Integer> votes = new HashMap<String, Integer>();
     String school;

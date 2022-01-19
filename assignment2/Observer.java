@@ -1,6 +1,6 @@
 package assignment2;
 import java.util.HashMap;
 
-public interface observer {
+public interface Observer {
     public void update(HashMap<String, Integer> votes);
 }
