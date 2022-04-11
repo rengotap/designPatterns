@@ -1,5 +1,10 @@
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
+/**
+ * Plays music
+ * @author rengotap
+ */
 public class MusicBox {
 
     private State englishState;
@@ -101,9 +106,15 @@ public class MusicBox {
      * @author rengotap
      */
     public void playSong(String songName, ArrayList<String> lyrics) {
-        System.out.println("Now Playing: " + songName);
+        System.out.println('\n' + "Now Playing: " + songName);
         for(int i = 0; i < lyrics.size(); i++) {
             System.out.println(lyrics.get(i));
+            try {
+                TimeUnit.MILLISECONDS.sleep(750);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
         }
+        System.out.println();
     }
 }

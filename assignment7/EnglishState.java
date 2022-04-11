@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * English Language State
+ * @author rengotap
+ */
 public class EnglishState implements State {
 
     private MusicBox box;
@@ -34,8 +38,10 @@ public class EnglishState implements State {
      */
     public void pressHappyButton() {
         ArrayList<String> lyrics = new ArrayList<String>(
-            Arrays.asList("If you're happy and you know it clap your hands"));
-
+            Arrays.asList("If you're happy and you know it clap your hands",
+                "If you're happy and you know it clap your hands",
+                "If you're happy and you know it and you really want to show it",
+                "If you're happy and you know it clap your hands"));
         box.playSong("If You're Happy and You Know It", lyrics);
 
     }

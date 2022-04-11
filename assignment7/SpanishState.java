@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Spanish Language State
+ * @author rengotap
+ */
 public class SpanishState implements State {
 
     private MusicBox box;
@@ -33,7 +37,12 @@ public class SpanishState implements State {
      * @author rengotap
      */
     public void pressHappyButton() {
-
+        ArrayList<String> lyrics = new ArrayList<String>(
+            Arrays.asList("Si usted esta feliz Apaluda las fuerte",
+                "Si usted esta feliz Apaluda las fuerte",
+                "Si usted esta feliz, En su cara se vera",
+                "Si usted esta feliz Apaluda las fuerte"));
+        box.playSong("Si Usted Esta Feliz", lyrics);
     }
 
     /**

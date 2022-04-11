@@ -1,3 +1,8 @@
+
+/**
+ * Interface for language states
+ * @author rengotap
+ */
 public interface State {
     public void pressStarButton();
     public void pressHappyButton();

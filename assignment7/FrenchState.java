@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * French Language State
+ * @author rengotap
+ */
 public class FrenchState implements State {
 
     private MusicBox box;
@@ -20,7 +24,11 @@ public class FrenchState implements State {
      * @author rengotap
      */
     public void pressStarButton() {
-
+        ArrayList<String> lyrics = new ArrayList<String>(
+            Arrays.asList("Brille, brille, petite étoile", "Je me demande vraiment ce que tu es!",
+                "Au-dessus du monde si haut", "Comme un diamant dans le ciel",
+                "Brille, brille, petite étoile", "Je me demande vraiment ce que tu es!"));
+        box.playSong("Brille Brille Petite Étoile", lyrics);
     }
 
     /**
@@ -30,11 +38,11 @@ public class FrenchState implements State {
      */
     public void pressHappyButton() {
         ArrayList<String> lyrics = new ArrayList<String>(
-            Arrays.asList("Si tu as d' la joie au coeur, Frappe des mains",
-                "Si tu as d' la joie au coeur, Frappe des mains",
-                "Si tu as d' la joie au coeur, Frappe des mains",
-                "Si tu as d' la joie au coeur, Frappe des mains"));
-        box.playSong("Si Tu as D' la Joie au Coeur", lyrics);
+            Arrays.asList("Si tu as d' la joie au cœur, Frappe des mains",
+                "Si tu as d' la joie au cœur, Frappe des mains",
+                "Si tu as d' la joie au cœur, Frappe des mains",
+                "Si tu as d' la joie au cœur, Frappe des mains"));
+        box.playSong("Si Tu As D' La Joie Au Cœur", lyrics);
     }
     
     /**
